@@ -10,21 +10,21 @@ This document describes the structure and the content of **run_analysis()** outp
 ###clean_data.txt
 
 ####Format
-* ASCII-text
-* Space-delimited
-* The text qualifier is " (double quote)
-* The first row contains column headers.
-* Total number of columns 68
-* Total number of rows (including header) 10300
++ ASCII-text
++ Space-delimited
++ The text qualifier is " (double quote)
++ The first row contains column headers.
++ Total number of columns 68
++ Total number of rows (including header) 10300
 
 <br>
 <br>
 
 ####Data
-* The file combines **training** and **test** data sets.
-* Each record represents an individual observation form either **training** or **test** data sets.
-* The column names appear as defined in **features.txt** file.
-* The columns are limited to **mean** and **std** variables as describen in Prog. Assignment.
++ The file combines **training** and **test** data sets.
++ Each record represents an individual observation form either **training** or **test** data sets.
++ The column names appear as defined in **features.txt** file.
++ The columns are limited to **mean** and **std** variables as describen in Prog. Assignment.
 
 <br>
 <br>
@@ -107,20 +107,20 @@ fBodyBodyGyroJerkMag-std() |
 ###summarised_data.txt
 
 ####Format
-* ASCII-text
-* Space-delimited
-* The text qualifier is " (double quote)
-* The first row contains column headers.
-* Total number of columns 68
-* Total number of rows (including header) 181
++ ASCII-text
++ Space-delimited
++ The text qualifier is " (double quote)
++ The first row contains column headers.
++ Total number of columns 68
++ Total number of rows (including header) 181
 
 <br>
 <br>
 
 ####Data
-* The file contains an aggregated data from **clean_data.txt** file.
-* The column names appear as defined in **features.txt** file with "MEAN of" prefix.
-* The columns are means of feaures (measurments) groupped by **subjectID** and **activityName**.
++ The file contains an aggregated data from **clean_data.txt** file.
++ The column names appear as defined in **features.txt** file with "MEAN of" prefix.
++ The columns are means of feaures (measurments) groupped by **subjectID** and **activityName**.
 
 <br>
 <br>
@@ -201,7 +201,7 @@ MEAN of fBodyBodyGyroJerkMag-std() |
 <br>
 
 ###Activities
-Activities are stores in **y_<train|test>.txt** files as integer codes. The codes translation is provided by **activity_labels.txt**.
+Activities are stored in **y_<train|test>.txt** files as integer codes. The codes translation is provided by **activity_labels.txt**.
 
 Activity Code | Activity Name
 --------------|--------------------

@@ -36,7 +36,7 @@ _[current script directory]_/**UCI HAR Dataset/test/subject_test.txt**| contains
 ```
 run_analysis <- function(max_rows = -1)
 ```
-where input paramter **max_rows** sets the maximum number of records from the data files to be returned. It's useful to limit the number of returned records during testing. 
+where input paramter **max_rows** sets the maximum number of records read from the **training** and **test** data files. It's useful to limit the number of processed records during testing. 
 
 max_rows value | return value
 -------------------------|------------------------------------------------------------------------
