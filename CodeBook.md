@@ -196,3 +196,18 @@ MEAN of fBodyAccMag-std() |
 MEAN of fBodyBodyAccJerkMag-std() |
 MEAN of fBodyBodyGyroMag-std() |
 MEAN of fBodyBodyGyroJerkMag-std() |
+
+<br>
+<br>
+
+###Activities
+Activities are stores in **y_<train|test>.txt** files as integer codes. The codes translation is provided by **activity_labels.txt**.
+
+Activity Code | Activity Name
+--------------|--------------------
+1 | WALKING
+2 | WALKING_UPSTAIRS
+3 | WALKING_DOWNSTAIRS
+4 | SITTING
+5 | STANDING
+6 | LAYING
