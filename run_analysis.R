@@ -1,12 +1,4 @@
 run_analysis <- function(max_rows = -1){
-    #install.packages("dplyr")
-    #library(dplyr)
-    
-    #install.packages("tidyr")
-    #library(tidyr)
-    
-    
-    
     #***********************************************
     #determine location of data.
     #the data directory "UCI HAR Dataset" must be located
@@ -76,26 +68,26 @@ run_analysis <- function(max_rows = -1){
     
     #***********************************************
     #load raw train data from X_train.txt file
-    X_train.txt <- tbl_df(read.table(file = X_train.txt.path, header = FALSE, nrows = max_rows))
+    X_train.txt <- tbl_df(read.table(file = X_train.txt.path, header = FALSE, nrows = ifelse(max_rows == 0, -1, max_rows)))
     
     #load activity IDs for train data in X_train.txt
-    y_train.txt <- tbl_df(read.table(file = y_train.txt.path, header = FALSE, col.names = "activityID", nrows = max_rows))
+    y_train.txt <- tbl_df(read.table(file = y_train.txt.path, header = FALSE, col.names = "activityID", nrows = ifelse(max_rows == 0, -1, max_rows)))
     
     #load subject IDs for X_train.txt
-    subject_train.txt <- tbl_df(read.table(file = subject_train.txt.path, header = FALSE, col.names = "subjectID", nrows = max_rows))
+    subject_train.txt <- tbl_df(read.table(file = subject_train.txt.path, header = FALSE, col.names = "subjectID", nrows = ifelse(max_rows == 0, -1, max_rows)))
     #***********************************************
     
     
     
     #***********************************************
     #test features (measurments) raw data
-    X_test.txt <- tbl_df(read.table(file = X_test.txt.path, header = FALSE, nrows = max_rows))
+    X_test.txt <- tbl_df(read.table(file = X_test.txt.path, header = FALSE, nrows = ifelse(max_rows == 0, -1, max_rows)))
     
     #activity IDs for test data in X_test.txt
-    y_test.txt <- tbl_df(read.table(file = y_test.txt.path, header = FALSE, col.names = "activityID", nrows = max_rows))
+    y_test.txt <- tbl_df(read.table(file = y_test.txt.path, header = FALSE, col.names = "activityID", nrows = ifelse(max_rows == 0, -1, max_rows)))
 
     #subject IDs for X_test.txt
-    subject_test.txt <- tbl_df(read.table(file = subject_test.txt.path, header = FALSE, col.names = "subjectID", nrows = max_rows))
+    subject_test.txt <- tbl_df(read.table(file = subject_test.txt.path, header = FALSE, col.names = "subjectID", nrows = ifelse(max_rows == 0, -1, max_rows)))
     #***********************************************
 
     
@@ -174,8 +166,9 @@ run_analysis <- function(max_rows = -1){
     
     
     #***********************************************
-    #save summarised data in file
+    #save summarised@ data in file
     write.table(clean_data, file = clean_data.txt.path, row.names = FALSE)
     write.table(summarised_data, file = summarised_data.txt.path, row.names = FALSE)
     #***********************************************
+
 }
