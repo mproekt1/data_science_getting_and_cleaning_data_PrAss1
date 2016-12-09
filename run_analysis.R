@@ -19,7 +19,9 @@ run_analysis <- function(max_rows = -1){
     subject_test.txt.path <- paste0(script_dir, "/UCI HAR Dataset/test/subject_test.txt")
     
     clean_data.txt.path <- paste0(script_dir, "/clean_data.txt")
+    clean_data.txt.codebook.path <- paste0(script_dir, "/clean_data_codebook.md")
     summarised_data.txt.path <- paste0(script_dir, "/summarised_data.txt")
+    summarised_data.txt.codebook.path <- paste0(script_dir, "/summarised_data_codebook.md")
     
     #check if data files exist
     if(file.access(features.txt.path, mode = 0) == -1){
@@ -168,7 +170,8 @@ run_analysis <- function(max_rows = -1){
     #***********************************************
     #save summarised@ data in file
     write.table(clean_data, file = clean_data.txt.path, row.names = FALSE)
+    Write(codebook(as.data.frame(clean_data)), file = clean_data.txt.codebook.path)
     write.table(summarised_data, file = summarised_data.txt.path, row.names = FALSE)
+    Write(codebook(as.data.frame(summarised_data)), file = summarised_data.txt.codebook.path)
     #***********************************************
-
 }
